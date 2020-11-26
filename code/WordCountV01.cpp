@@ -21,7 +21,7 @@ int main(int argc,char *argv[])
 		else if(!(strcmp(argv[1],"-a")))
 			MuiltipleCount(argv[2]);
 		else
-			printf("参数输入错误，只有-l,-w,-l,-a四个参数"); 
+			printf("参数输入错误，只有-c,-w,-l,-a四个参数"); 
 	}
 	return 0;
 }

@@ -1,0 +1,7 @@
+#include<stdio.h>
+
+int main() {
+	system("gcc -o \ExecutableFile\wc \code\WordCountV02.cpp");
+	system("wc.exe -c file")
+	return 0;
+}
