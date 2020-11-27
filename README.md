@@ -1,4 +1,4 @@
-#项目简介
+# 项目简介
 
 本项目是基于C语言实现的命令行文本技术统计程序。程序能够正确统计导入的纯英文TXT文本中字符数，单词数，句子数。实现该功能的源码为**\code\WordCountV01.cpp**，此为还可以统计文本中的代码行、空行、注释行。整个功能整合的源码为**\code\WordCountV02.cpp**
 
@@ -44,7 +44,7 @@ wc.exe -a file.exe
 
 下面依次是统计文本的基本功能和扩展功能的示例。
 
-![ex](screenshot/ex.JPG)
+![Ex](screenshot/Ex.JPG)
 
 
 # 单元测试
