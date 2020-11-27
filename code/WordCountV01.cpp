@@ -5,7 +5,6 @@
 void CharCount(char *file); //读出有多少个字符
 void WordCount(char *file); //读取有多少个单词 
 void LineCount(char *file); //读取有多少行 
-void MuiltipleCount(char *file); //读取有多少代码行，空白行，注释行 
 
 int main(int argc,char *argv[])
 {
@@ -18,10 +17,8 @@ int main(int argc,char *argv[])
 			WordCount(argv[2]); 
 		else if(!(strcmp(argv[1],"-l")))
 			LineCount(argv[2]); 
-		else if(!(strcmp(argv[1],"-a")))
-			MuiltipleCount(argv[2]);
 		else
-			printf("参数输入错误，只有-c,-w,-l,-a四个参数"); 
+			printf("参数输入错误，只有-c,-w,-l四个参数"); 
 	}
 	return 0;
 }
@@ -71,53 +68,4 @@ void LineCount(char *file)//行数统计。
 	fclose(qr);
 }
 
-void MuiltipleCount(char *file)//代码行，空行统计，注释行。 大括号作为代码块的标志 ,注释要另起一行并且在代码块里面 。 文件第一行不为空。 
-{
-	FILE *qr = fopen(file, "r");
-	char ch = fgetc(qr);
-	int LBraces = 0, RBraces = 0;//统计左右大括号个数 
-	int c=0,e=0,n=0;
-	while(ch != EOF)
-	{
-		if(ch == '{') LBraces++; 
-		else if(ch == '\n'){
-			ch = fgetc(qr);
-				while(ch == '\n'){ //若连续都是换行那么空白行加一。 
-					e++;
-					ch = fgetc(qr);
-				}
-		}else{
-			ch = fgetc(qr);
-		} 
-		while(LBraces!=RBraces&&LBraces!=0){//大左括号不等于大右括号个数时，在代码 语句里面。
-			if (ch == '\n'){ //当遇到换行。 
-				ch = fgetc(qr);
-				while(ch == '\n'){ //若连续都是换行那么空白行加一。 
-					e++;
-					ch = fgetc(qr);
-				}
-				while(ch == '\0') ch=fgetc(qr); 
-				if(ch == '/'){
-					ch=fgetc(qr); 
-					if (ch == '/'){
-						n++;
-						while(ch != '\n')
-							ch = fgetc(qr);					
-					}
-				}else{
-					c++;
-				} 
-			}else{
-				ch=fgetc(qr);				
-			}
-			if(ch == '{') LBraces++;
-			else if(ch == '}') RBraces++;
-		}
-		
-	}
-	printf("the count of code line is ：%d.\n",c+1);//算上代码块标志“{”,"}"这两行 
-	printf("the count of empt line is ：%d.\n",e);
-	printf("the count of note line is ：%d.\n",n);
-	fclose(qr);
-}
 
