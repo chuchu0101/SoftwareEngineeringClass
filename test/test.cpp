@@ -3,9 +3,9 @@
 
 int main() {
 	system("gcc -o ..\\ExecutableFile\\wc ..\\code\\WordCountV02.cpp");
-	system("..\\ExecutableFile\\wc.exe -c ..\\file.txt");
-	system("..\\ExecutableFile\\wc.exe -l ..\\file.txt");
-	system("..\\ExecutableFile\\wc.exe -w ..\\file.txt");
-	system("..\\ExecutableFile\\wc.exe -a ..\\file.txt");
+	system("..\\ExecutableFile\\wc.exe -c filetest.txt");
+	system("..\\ExecutableFile\\wc.exe -l filetest.txt");
+	system("..\\ExecutableFile\\wc.exe -w filetest.txt");
+	system("..\\ExecutableFile\\wc.exe -a filetest.txt");
 	return 0;
 }
