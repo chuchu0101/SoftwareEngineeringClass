@@ -1,11 +1,13 @@
-下面是代码行：
+fllow this code：
 
 {
 #include<stdio.h>
-
+#include<stdlib.h>
 
 int main() {
 
-	//注意等号左右两边要相同数据类型，所以强制转换
+	int a;
+	a=1; //the code is poor.
+
 }
 }

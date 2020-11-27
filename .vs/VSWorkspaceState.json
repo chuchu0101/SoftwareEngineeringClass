@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\code",
+    "\\ExecutableFile",
     "\\test"
   ],
-  "SelectedNode": "\\test\\filetest.txt",
+  "SelectedNode": "\\file.txt",
   "PreviewInSolutionExplorer": false
 }

@@ -1,7 +1,13 @@
+This is test file:
+
+{
 #include<stdio.h>
 
 int main() {
-	system("gcc -o \ExecutableFile\wc \code\WordCountV02.cpp");
+	system("gcc -o \ExecutableFile\wc \code\WordCountV02.cpp"); \\system() function
 	system("wc.exe -c file")
 	return 0;
 }
+}
+
+above is c progress.
